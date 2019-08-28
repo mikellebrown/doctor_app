@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-root "patients#index"
+root "doctors#index"
 resources :doctors
 resources :patients
 resources :appointments, only: [:index, :new, :create, :destroy]
