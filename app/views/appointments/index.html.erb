@@ -1,24 +1,13 @@
-<h1><%= @doctor.name %>: Appointments</h1>
-<%= link_to 'Add Appointment', new_appoinment_path(@doctor) %>
+<h1><%= @doctor.full_name %>: Appointments</h1>
+<%= link_to 'Add Appointment', new_doctor_appointment_path(@doctor) %>
 <hr />
-
-<h2>Doctor</h2>
+<h2>Patients</h2>
 <ul>
-  <% @doctors.each do |doctor| %>
+  <% @doctor.appointments.each do |doctor| %>
     <li>
-      <%= doctor.user.full_name %>
+      <%= doctor.patient.full_name %>
       <br />
       <%= link_to 'Remove', doctor_appointment_path(@doctor, doctor), method: :delete %>
     </li>
   <% end %>
-</ul>
-<h2>Patient</h2>
-<ul>
-  <% @patients.each do |ta| %>
-    <li>
-      <%= patient.user.full_name %>
-      <br />
-      <%= link_to 'Remove', doctor_appointment_path(@doctor, patient), method: :delete %>
-    </li>
- <% end %>
 </ul>

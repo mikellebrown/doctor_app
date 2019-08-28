@@ -7,6 +7,7 @@ class AppointmentsController < ApplicationController
   def index
     @doctors = @doctor.appointments.where(role: 'doctor')
     @patients = @doctor.appointments.where(role: 'patient')
+
   end
 
   def new
